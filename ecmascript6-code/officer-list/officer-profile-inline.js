@@ -4,16 +4,6 @@ import {officerData} from './officer-data.js'
 
 const HIGHLIGHT_COLOR = '#41D6C3'
 
-const IMAGE_WIDTH = 30;
-const IMAGE_HEIGHT = 30;
-
-const imgStyle = {
-	width: IMAGE_WIDTH,
-	height: IMAGE_HEIGHT,
-	margin: 5,
-}
-
-
 export default class InlineOfficerProfile extends React.Component{
 	constructor(props) {
 		super(props)
@@ -41,10 +31,10 @@ export default class InlineOfficerProfile extends React.Component{
 function getImageList(officer) {
 	var list = [];
 	if (officer.profile.facebookURL)
-		list.push(<a href={officer.profile.facebookURL}><img style={imgStyle} src={'assets/officer-images/facebook.png'} /></a>)///
+		list.push(<a href={officer.profile.facebookURL}><i className="fa fa-facebook fa-2x fa-fw" aria-hidden="true"></i></a>)
 	if (officer.profile.linkedinURL)
-		list.push(<a href={officer.profile.linkedinURL}><img style={imgStyle} src={'assets/officer-images/linkedin.png'} /></a>)///
+		list.push(<a href={officer.profile.linkedinURL}><i className="fa fa-linkedin fa-2x fa-fw" aria-hidden="true"></i></a>)
 	if (officer.profile.githubURL)
-		list.push(<a href={officer.profile.githubURL}><img style={imgStyle} src={'assets/officer-images/github.png'} /></a>)
+		list.push(<a href={officer.profile.githubURL}><i className="fa fa-github fa-2x fa-fw" aria-hidden="true"></i></a>)
 	return list;
 }
